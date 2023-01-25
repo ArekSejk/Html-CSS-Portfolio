@@ -243,7 +243,7 @@ article {
     color: #eaefbd;
     min-height: 120vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url("/images/Tło\ fixed\ 3.png") center/cover no-repeat fixed;
+            rgba(0, 0, 0, 0.5)), url("./images/Tło\ fixed\ 3.png") center/cover no-repeat fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -260,7 +260,7 @@ article {
     font-size: 10em;
     color: #55251d;
     min-height: 105vh;
-    background: url(/images/Tło\ fixed\ 3.png);
+    background: url(./images/Tło\ fixed\ 3.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -334,7 +334,7 @@ article {
     font-size: 7em;
     color: #1a281f;
     min-height: 105vh;
-    background: url(/images/Tło\ fixed\ 3.png);
+    background: url(./images/Tło\ fixed\ 3.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
