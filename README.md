@@ -1,6 +1,8 @@
 # Html-Css-Portfolio
 
-This is my first portfolio. Day by day making progres! :rocket:
+This is my first portfolio.
+
+Day by day making progress! :rocket:
 
 ### Technology:
 * HTML
