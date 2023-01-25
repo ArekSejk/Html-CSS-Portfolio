@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.header {
+    position: absolute;
+    z-index: 1;
+    margin-left: 30px;
+    animation: h_move 10s 0s infinite linear;
+}
+@keyframes h_move {
+    0% {
+        color: red;
+    }
+    25% {
+        color: blue;
+    }
+    50% {
+        color: yellow;
+    }
+    75% {
+        color: white;
+    }
+    100% {
+        color: red;
+    }
+
+}
+
+#sun {
+    background: yellow;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    animation-name: sun_move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 0;
+    /* animation long code above  */
+}
+@keyframes sun_move {
+    5% {
+        transform: translate(6vw, -12vh);
+    }
+    10% {
+        transform: translate(12vw, -24vh);
+    }
+    15% {
+        transform: translate(18vw, -36vh);
+    }
+    20% {
+        transform: translate(24vw, -43vh);
+    }
+    25% {
+        transform: translate(30vw, -48vh);
+        background: orange;
+        box-shadow: 0px 0px 25px 20px orange;
+    }
+    30% {
+        transform: translate(36vw, -43vh);
+    }
+    35% {
+        transform: translate(42vw, -36vh);
+    }
+    40% {
+        transform: translate(48vw, -24vh);
+    }
+    45% {
+        transform: translate(54vw, -12vh);
+    }
+    50% {
+        transform: translateX(60vw);
+        background: orangered;
+        box-shadow: 0px 0px 0px 0px;
+    }
+    100% {
+        transform: translateX(60vw);
+        background: orangered;
+    }
+
+}
+#moon {
+    background: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    animation-name: moon_move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -1;
+    /* animation long code above */
+}
+@keyframes moon_move {
+    0% {
+        transform: translate(0vw, 0vh);
+    }
+    50% {
+        transform: translate(0vw,0vh);
+        box-shadow: 0px 0px 0px 0px;
+    }
+    55% {
+        transform: translate(6vw, -12vh);
+    }
+    60% {
+        transform: translate(12vw, -24vh);
+    }
+    65% {
+        transform: translate(18vw, -36vh);
+    }
+    70% {
+        transform: translate(24vw, -43vh);
+    }
+    75% {
+        transform: translate(30vw, -48vh);
+        box-shadow: -17px 0px 12px 2px white;
+    }
+    80% {
+        transform: translate(36vw, -43vh);
+    }
+    85% {
+        transform: translate(42vw, -36vh);
+    }
+    90% {
+        transform: translate(48vw, -24vh);
+    }
+    95% {
+        transform: translate(54vw, -12vh);
+    }
+    100% {
+        transform: translateX(60vw);
+    }
+
+}
+#moon_bite {
+    width: 75%;
+    height: 100%;
+    border-radius: 50%;
+    background: navy;
+    position: absolute;
+    transform: translate(50%);
+    animation: moon_bite_move 5s 0s infinite linear;
+}
+@keyframes moon_bite_move {
+        0% {
+            background: navy;
+        }
+
+        50% {
+            background: black;
+        }
+
+        100% {
+            background: navy;
+        }
+    }
+
+#sky {
+    background: navy;
+    width: 100vw;
+    height: 70vh;
+    box-sizing: border-box;
+    z-index: -2;
+    position:relative;
+    animation: sky_move 10s 0s infinite linear;
+    /* animation shorthand code above */
+}
+@keyframes sky_move {
+    25% {
+        background: rgb(0, 255, 234);
+    }
+    50% {
+        background: navy;
+    }
+    75% {
+        background: black;
+    }
+    100% {
+        background: navy;
+    }
+}
+
+#ground {
+    background: green;
+    width: 100vw;
+    height: 30vh;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+}

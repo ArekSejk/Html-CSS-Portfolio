@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #eaefbd;
+}
+
+header {
+    background: #1a281f;
+    color: white;
+    flex-basis: 100%;
+    min-height: 22vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo {
+    width: min(20vw, 250px);
+    align-self: center;
+    flex-grow: 0;
+    transition: all 1s;
+    z-index: 0;
+
+    /* width: clamp(200px, 200px, 1000px); */
+}
+
+.logo:hover {
+    transform: rotateZ(720deg);
+    opacity: 0.1;
+    scale: 60%;
+}
+
+.title {
+    color: #eaefbd;
+    align-self: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-align: center;
+    z-index: 1;
+    flex-grow: 1;
+    margin: 0 2vw;
+    text-shadow: 2px -2px 1px #b5917d;
+    transition: all 0.5s;
+}
+
+.title:hover {
+    transform: translate(5px, 5px);
+    text-shadow: 5px 5px 40px #eaefbd;
+    z-index: 2;
+}
+
+.navbar {
+    background: #1a281f;
+    z-index: 1;
+    display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;
+}
+
+.menu {
+    list-style-type: none;
+    /* margin: 2vh min(0.2em, 5%)  1vh auto; */
+    display: flex;
+    width: min(550px, 100vw);
+    height: 3em;
+    flex-wrap: nowrap;
+    gap: 0.4em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+}
+
+a {
+    text-decoration: none;
+}
+li {
+    flex-basis: 25%;
+    height: 100%;
+    text-align: center;
+    padding-top: 1em;
+    background: #1a281f;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.3vw;
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+    /* tutaj likwidacja podkreslenia linka nie miala mimo ze jest. bo musi to byc usuniete bezposrednio w stylu <a href..> i tak zrobilem */
+    color: #f3c97c;
+}
+
+li:hover {
+    height: 250px;
+    text-shadow: 1px 1px #eaefbd;
+    transform: translateY(10px);
+    background: linear-gradient(#1a281f, #1a281f, #1a281f, #eaefbd);
+    border-radius: 20%;
+    scale: 104%;
+    letter-spacing: 0.4em;
+    padding-top: 50px;
+    box-shadow: 3px 1px 1px #55251d;
+    opacity: 0.97;
+    /* W pierwotnej wersji klikalność hovera byla ograniczona tylko do napisu. A caly wysuwajcy sie jezyk li nie byl linkiem. Wtedy bylo <li><a..></li> a teraz schowalem liste w linka i wyszlo <a..><li>text</li></a>. Dodatkowo musialem zmodyfikowac style fontow i przeniesc je do li */
+}
+
+/* ABOUT */
+#about {
+    background: linear-gradient(#1a281f, #55251d, #b5917d, #f3c97c, #eaefbd);
+    height: 100vh;
+    color: white;
+    padding: 120px min(100px, 10vw);
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3%;
+}
+
+.name {
+    color: #f3c97c;
+    text-shadow: 2px 1px 20px #eaefbd;
+    text-align: center;
+    flex-basis: 20%;
+    transition: all 0.5s ease-in;
+    flex-grow: 1;
+}
+
+.name:hover {
+    text-decoration: 1px dashed underline;
+    scale: 102%;
+    letter-spacing: 0.6px;
+}
+
+article {
+    color: #eaefbd;
+    flex-basis: 70%;
+    flex-grow: 2;
+}
+
+.gallery {
+    background: #eaefbd;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    box-sizing: border-box;
+    width: 90%;
+    margin: 30px auto;
+    padding-bottom: 10em;
+    grid-gap: 0.5em 3em;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    opacity: 0;
+    animation: show 4s 1 linear forwards;
+    position: relative;
+}
+
+@keyframes show {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.pics {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pics>* {
+    width: 100%;
+    height: 100%;
+}
+
+.pics:hover {
+    scale: 115%;
+    box-shadow: 3px 3px 10px 10px #55251d;
+}
+
+.pics:active {
+    position: absolute;
+    top: -200px;
+    scale: 40%;
+    box-shadow: 0 0 750px 750px #eaefbd;
+    z-index: 2;
+}
+
+/* tutaj użyłem active, dzieki czemu przytrzymujac myszke na zdjeciu powieksza sie fotka, ale ciezko to spozycjonowac na srodek ekranu i nie mozna zrobic tak by zostawalo powiekszone az do odklikniecia. ponoc bez js ciezko to zrobic. pawel podpowiedzial zeby wykorzystac to tego <details> ktore rozgryzlem w sasiednim folderze. Jest lepszym rozwiazaniem ale to tez nie to co chcialem uzyskac. Juz nie chcialo mi sie tutaj tego zmieniac. */
+
+@media only screen and (min-width: 774px) and (max-width: 880px) {
+    .wide1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-end: 3;
+    }
+
+    .tall {
+        grid-row-start: 5;
+        grid-row-end: 7;
+    }
+}
+
+@media only screen and (min-width: 1049px) and (max-width:1323px) {
+    .last {
+        grid-row: 4 / span 2;
+        grid-column: 2 / span 2;
+    }
+
+    .wide2 {
+        grid-area: 3/5/1/3;
+    }
+}
+
+@media only screen and (min-width:1324px) {
+    .corner1 {
+        grid-area: 1/3/3/5;
+    }
+
+    .last {
+        grid-column: 1/6;
+    }
+}
+
+.caption1 {
+    text-shadow: 22px 22px 15px #55251d;
+}
+
+.slide_text_2 {
+    font-size: 18em;
+    color: #eaefbd;
+    min-height: 120vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("/images/Tło\ fixed\ 3.png") center/cover no-repeat fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-basis: 100%;
+    z-index: 4;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_text_3 {
+    font-size: 10em;
+    color: #55251d;
+    min-height: 105vh;
+    background: url(/images/Tło\ fixed\ 3.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.caption2 {
+    padding-right: 10vw;
+    text-shadow: 15px 15px 15px #55251d;
+    transition: all 10s ease-out;
+}
+
+.caption2:hover {
+    transform: translateX(-53vw);
+}
+
+/* PROJECTS */
+.projects_container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-basis: 100%;
+    gap: 2em;
+}
+
+.proj_head {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    color: #f3c97c;
+    text-shadow: 10px 10px 10px #1a281f;
+    text-transform: uppercase;
+}
+
+#projects {
+    background: linear-gradient(#eaefbd, #f3c97c, #b5917d, #55251d, #1a281f);
+    flex-basis: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 1em 10em 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-gap: 0.5em;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid_cel {
+    box-sizing: border-box;
+    border: 1px solid #55251d;
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 10px 15px #b5917d;
+}
+
+.slide {
+    background: #eaefbd;
+    flex-basis: 100%;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 2em #f3c97c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.slide_text_1 {
+    font-size: 7em;
+    color: #1a281f;
+    min-height: 105vh;
+    background: url(/images/Tło\ fixed\ 3.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* OTHER */
+#no_idea {
+    background: #1a281f;
+    color: #eaefbd;
+    box-shadow: inset 0px 10px 30px #eaefbd, 10px 10px 10px #f3c97c;
+    padding: 2em;
+    flex-basis: 100%;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+    .projects_container {
+        flex-basis: 70%;
+    }
+
+    #no_idea {
+        flex-basis: 30%;
+    }
+}
+
+footer {
+    background: #1a281f;
+    color: #eaefbd;
+    flex-basis: 100%;
+    height: 20vh;
+    display: flex;
+    border: 1px solid red;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* tutaj do zrobienia jest jeszcze footer cd. tzn podlinkowac ikony socjal mediow i animowac/transitionowac ze po kliknieciu zmieniaja kolor */
+.info_footer {
+    font-size: 1em;
+    flex-basis: 60%;
+
+}
+
+.social_media_grid {
+    flex-basis: 40%;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-content: center;
+    justify-items: center;
+    gap: 1em;
+    height: 150px;
+
+}
+.fb, .insta, .linked    {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    
+}
+
+.fb_img, .insta_img, .linked_img {
+    width:50px;
+    height:50px;
+}
+
+
+
+
+
+
+
+
+/* PINNED RIGHT LINKS */
+.pinned_menu {
+    position: fixed;
+    width: min(12vw, 100px);
+    height: 8em;
+    background: transparent;
+    right: 0%;
+    top: 65%;
+    border-radius: 10%;
+    border: 1px solid #eaefbd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3;
+}
+
+.icon_top_up {
+    scale: 300%;
+    color: #eaefbd;
+}

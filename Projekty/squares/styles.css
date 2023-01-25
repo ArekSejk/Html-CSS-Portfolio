@@ -1,0 +1,50 @@
+/* Pytania:
+1. W trzecim kwadracie mam ograniczoną skalę. Jak zrobić scale infinit lub czas infinit? */
+
+body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+div {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+#first_square_parent {
+    position: relative;
+}
+/* First square scales up to 2x (By simple transition) */
+.first_square {
+    background: yellowgreen;
+    transition: all 2s 0.5s linear;
+    position: absolute;
+}
+.first_square:hover {
+    width: 200px;
+    height: 200px;
+}
+
+/* Second square just waits still in one position */
+.second_square {
+    background: goldenrod;
+    display: inline-block;
+}
+
+
+#third_square_parent {
+    position: relative;
+}
+/* Third square is still growing (by transition & transform:scale) */
+.third_square {
+    background: red;
+    transition: all 15s 0s linear;
+    position: absolute;
+}
+.third_square:hover {
+    transform: scale(23,23);
+}

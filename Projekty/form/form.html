@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie Ankieta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form class="form">
+        <div>
+            <label for="why_id">Dlaczego chcesz dołączyć do branży IT? *</label><br>
+            <input type="checkbox" name="why1" id="why_id">Aktualna praca mnie nie cieszy.<br>
+            <input type="checkbox" name="why2" id="why_id">Za dziecka kodowałem_am.<br>
+            <input type="checkbox" name="why3" id="why_id">Jestem już programistą_tką.<br>
+            <input type="checkbox" name="why4" id="why_id">Lubię komputery.<br>
+        </div>
+        <div>
+            <label for="before_id">Czy uczyłeś_aś się kodować wcześniej? *</label><br>
+            <input type="radio" name="before1" id="before_id">Samodzielnie.<br>
+            <input type="radio" name="before2" id="before_id">Bootcamp.<br>
+            <input type="radio" name="before3" id="before_id">Studia.<br>
+            <input type="radio" name="before4" id="before_id">Nie.<br>
+        </div>
+        <div>
+            <label for="impressions_id">Opisz w kilku zdaniach swoje wrażenia z nauki w innym miejscu.</label><br>
+            <textarea name="impresions" id="impressions_id"></textarea>
+        </div>
+        <div>
+            <label for="objective_id">Jaki jest twój cel związany z nauką? *</label><br>
+            <select name="objective" id="objective_id">
+                <option hidden selected>Wybierz odpowiedź z listy</option>
+                <option value="change">Zmienić pracę</option>
+                <option value="find">Znaleźć lepszą pracę</option>
+                <option value="develop">Rozwój w technologii</option>
+                <option value="create">Stworzyć portfolio</option>
+            </select>
+        </div>
+        <div>
+            <label for="specialty_id">Jaką specjalizację chcesz osiągnąć? *</label><br>
+            <select name="specialty" id="specialty_id">
+                <option hidden selected>Wybierz odpowiedź z listy</option>
+                <option value="front">Frontend JS</option>
+                <option value="back">Backend JS</option>
+                <option value="solid">Solidity</option>
+                <option value="python">Python</option>
+            </select>
+        </div>
+        <div>
+            <label for="hours"> Ile godzin tygodniowo możesz poświęcić na naukę?</label><br>
+            <input type="number" min="0" id="hours">
+        </div>
+        <div>
+            <label for id="calendar">Zaznacz na kalendarzu, kiedy chciałbyś zacząć naukę: *</label>
+            <section id="calendar">
+                <fieldset class="months">
+                    <ul>
+                        <span class="prev">&lt;</span>
+                        <span class="next">&gt;</span>
+                        <span class="current">Maj 2022</span>
+                    </ul>
+                </fieldset>
+                <table>
+                    <!-- <th tj. table header"> -->
+                    <tr>
+                        <th class="day_name">Mon</th>
+                        <th class="day_name">Tu</th>
+                        <th class="day_name">We</th>
+                        <th class="day_name">Th</th>
+                        <th class="day_name">Fr</th>
+                        <th class="day_name">Sa</th>
+                        <th class="day_name">Su</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td class="active">18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="next_mth_days">1</td>
+                        <td class="next_mth_days">2</td>
+                        <td class="next_mth_days">3</td>
+                        <td class="next_mth_days">4</td>
+                        <td class="next_mth_days">5</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        <div>
+            <label for="phone">Podaj swój numer telefonu. *</label><br>
+            <input type="tel" pattern="[0-9]{9}" id="phone">
+        </div>
+        <div>
+            <label for="email_id">Podaj swój e-mail. *</label><br>
+            <input type="email" value="email@gmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email_id">
+            <!-- Pytanie: NIE wychodzi mi sprawdzenie formatu pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" -->
+        </div>
+    </form>
+</body>
+</html>

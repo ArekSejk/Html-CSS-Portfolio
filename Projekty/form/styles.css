@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
+    background: linear-gradient(to bottom, hsla(28, 100%, 87%, 1), hsla(50, 100%, 75%, 1));
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #383C3E;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+form {
+    margin-left: 30%;
+}
+
+div {
+    padding-bottom: 1rem;
+}
+
+label {
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+input[type=checkbox] {
+    height: 16px;
+    width: 16px;
+}
+
+#impressions_id {
+    width: 548px;
+    height: 200px;
+    resize: none;
+    background: fixed;
+    border: 1px solid hsla(200, 5%, 23%, 1);
+}
+
+#objective_id {
+    background: transparent;
+    width: 548px;
+    height: 30px;
+    border: 1px solid black;
+    padding-left: 15px;
+    /* Żeby select lub jakiś obiekt był przezroczysty można za transparent stosować też 
+    background: rgba(0,0,0,0);
+    pamiętając, że ostatnia wartość to przezroczystość/intensywność */
+}
+
+#specialty_id {
+    width: 548px;
+    height: 30px;
+    border: 1px solid hsla(200, 5%, 23%, 1);
+    background: rgba(0, 0, 0, 0);
+    padding-left: 15px;
+}
+
+#hours {
+    width: 167px;
+    height: 30px;
+    border: 1px solid #383C3E;
+    background: fixed;
+    padding-left: 15px;
+}
+
+#calendar {
+    width: 280px;
+    height: 286px;
+}
+
+.months {
+    position: relative;
+    font-size: 16px;
+    padding-bottom: 30px;
+    border: transparent;
+    /* musiałem zmienić border na niewidoczne, ponieważ gdy zmieniłem typ div na fieldset to pojawiła się ramka, a div jej nie miał */
+}
+
+.prev {
+    position: absolute;
+    top: 10px;
+    right: 43px;
+    font-size: 19px;
+}
+
+.next {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 19px;
+}
+
+.current {
+    position: absolute;
+    top: 13.5px;
+    left: 0;
+    font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    letter-spacing: 0.5px;
+    text-align: center;
+    width: 100%;
+}
+
+th {
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+}
+
+td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #383C3E;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.active {
+    background: hsla(234, 80%, 56%, 1);
+    color: white;
+}
+
+.next_mth_days {
+    color: hsla(0, 0%, 56%, 1);
+}
+
+#phone {
+    background: transparent;
+    border: 1px solid hsla(200, 5%, 23%, 1);
+    width: 548px;
+    height: 30px;
+}
+
+#email_id {
+    background: transparent;
+    border: 1px solid hsla(200, 5%, 23%, 1);
+    width: 548px;
+    height: 30px;
+}
