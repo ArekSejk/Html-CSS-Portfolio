@@ -9,7 +9,7 @@ Day by day making progress! :rocket:
 * CSS
 
 ### What's in?
->I used mostly flex & grid, some nice styles and links.
+>I mostly used flex & grid, some nice styles and links.
 
 
 Sample one...
